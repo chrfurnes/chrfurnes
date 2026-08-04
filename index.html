@@ -434,7 +434,7 @@
         /* Metode */
 
         .method-header {
-            max-width: 770px;
+            max-width: 800px;
             margin-bottom: 44px;
         }
 
@@ -514,11 +514,11 @@
             grid-template-columns:
                 140px
                 minmax(0, 1fr)
-                160px;
+                175px;
 
             gap: 34px;
 
-            padding: 30px 0;
+            padding: 34px 0;
 
             border-bottom: 1px solid var(--border);
         }
@@ -542,8 +542,17 @@
                 "Times New Roman",
                 serif;
 
-            font-size: 1.55rem;
+            font-size: 1.65rem;
             font-weight: 500;
+        }
+
+        .analysis-subtitle {
+            margin-bottom: 10px !important;
+
+            color: var(--text) !important;
+
+            font-size: 1.02rem;
+            font-weight: 700;
         }
 
         .analysis-item p {
@@ -558,6 +567,94 @@
 
             font-size: 0.88rem;
             text-align: right;
+        }
+
+        .analysis-actions {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+
+            margin-top: 24px;
+        }
+
+        .analysis-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+
+            padding: 10px 15px;
+
+            color: #ffffff;
+            background: var(--accent);
+
+            border: 1px solid var(--accent);
+            border-radius: 2px;
+
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-decoration: none;
+
+            transition:
+                background 150ms ease,
+                color 150ms ease,
+                border-color 150ms ease;
+        }
+
+        .analysis-button:hover,
+        .analysis-button:focus-visible {
+            color: var(--accent);
+            background: transparent;
+        }
+
+        .analysis-button.secondary {
+            color: var(--text);
+            background: transparent;
+            border-color: var(--border);
+        }
+
+        .analysis-button.secondary:hover,
+        .analysis-button.secondary:focus-visible {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        /* Diskré lenke til Excel-modellen */
+
+        .model-resource {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 7px;
+
+            margin-top: 15px;
+
+            color: var(--muted);
+            font-size: 0.82rem;
+        }
+
+        .model-resource span {
+            font-weight: 600;
+        }
+
+        .model-resource a {
+            color: var(--accent);
+            font-weight: 650;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(20, 83, 59, 0.35);
+        }
+
+        .model-resource a:hover,
+        .model-resource a:focus-visible {
+            border-color: var(--accent);
+        }
+
+        .model-note {
+            margin-top: 8px !important;
+
+            color: var(--muted) !important;
+            font-size: 0.79rem;
         }
 
         /* Kontakt */
@@ -721,6 +818,15 @@
                 gap: 4px;
             }
 
+            .analysis-actions {
+                align-items: stretch;
+                flex-direction: column;
+            }
+
+            .analysis-button {
+                width: 100%;
+            }
+
             .contact-section {
                 padding: 58px 0 62px;
             }
@@ -804,7 +910,9 @@
                     </h1>
 
                     <p class="lead">
-                        Fundamentale aksjeanalyser av nordiske børsnoterte selskaper, med vekt på lønnsomhet, kapitalavkastning og verdsettelse
+                        Fundamentale aksjeanalyser av nordiske børsnoterte
+                        selskaper, med vekt på lønnsomhet,
+                        kapitalavkastning og verdsettelse.
                     </p>
 
                     <div class="hero-links">
@@ -907,17 +1015,18 @@
             <div class="container">
                 <div class="method-header">
                     <p class="section-label">
-                        Metode
+                        Metode og datagrunnlag
                     </p>
 
                     <h2>
-                        Fra rapportert resultat til estimert verdi
+                        Fra primærkilder til estimert verdi
                     </h2>
 
                     <p>
-                        Analysene er bygget rundt konkrete forutsetninger
-                        som kan etterprøves og oppdateres når selskapene
-                        rapporterer nye tall.
+                        Analysene bygger på offentlig tilgjengelig informasjon,
+                        bearbeidet i egne finansielle modeller. Det skilles
+                        mellom rapporterte tall, eksterne markedsdata og egne
+                        prognoser og verdsettelsesberegninger.
                     </p>
                 </div>
 
@@ -928,12 +1037,14 @@
                         </span>
 
                         <h3>
-                            Regnskap og modell
+                            Primærkilder
                         </h3>
 
                         <p>
-                            Historiske tall hentes fra selskapenes egne
-                            rapporter og bygges inn i en separat finansmodell.
+                            Historiske regnskapstall, segmentinformasjon og
+                            operative nøkkeltall hentes hovedsakelig fra
+                            selskapenes årsrapporter, kvartalsrapporter,
+                            investorpresentasjoner og børsmeldinger.
                         </p>
                     </article>
 
@@ -943,13 +1054,14 @@
                         </span>
 
                         <h3>
-                            Operasjonelle drivere
+                            Markedsdata
                         </h3>
 
                         <p>
-                            Vekst, marginer, kapitalbinding og avkastning på
-                            investert kapital knyttes til utviklingen i
-                            virksomheten.
+                            Aksjekurser, valutakurser, konsensusestimater og
+                            multipler for sammenlignbare selskaper hentes fra
+                            eksterne markedsdatakilder. Dataene knyttes til en
+                            bestemt dato slik at verdsettelsen kan etterprøves.
                         </p>
                     </article>
 
@@ -959,13 +1071,68 @@
                         </span>
 
                         <h3>
-                            Verdsettelse og risiko
+                            Prognoser
                         </h3>
 
                         <p>
-                            DCF, SOTP og relevante multipler vurderes i
-                            bull-, base- og bear-case, med eksplisitte
-                            risikofaktorer.
+                            Egne prognoser utarbeides med utgangspunkt i
+                            historiske resultater, selskapets utsikter,
+                            segmentenes operative drivere og forventet
+                            utvikling i vekst, marginer, investeringer og
+                            arbeidskapital.
+                        </p>
+                    </article>
+
+                    <article class="method-row">
+                        <span class="method-number">
+                            04
+                        </span>
+
+                        <h3>
+                            DCF
+                        </h3>
+
+                        <p>
+                            DCF-modellen verdsetter selskapet basert på
+                            prognostisert fri kontantstrøm. Kontantstrømmene
+                            diskonteres med et beregnet avkastningskrav, og
+                            usikkerheten vurderes gjennom bear-, base- og
+                            bull-scenarioer samt sensitivitetsanalyser.
+                        </p>
+                    </article>
+
+                    <article class="method-row">
+                        <span class="method-number">
+                            05
+                        </span>
+
+                        <h3>
+                            Reverse DCF
+                        </h3>
+
+                        <p>
+                            Reverse DCF brukes til å undersøke hvilke
+                            forutsetninger for vekst, marginer og kontantstrøm
+                            som må oppfylles for å forsvare den observerte
+                            aksjekursen.
+                        </p>
+                    </article>
+
+                    <article class="method-row">
+                        <span class="method-number">
+                            06
+                        </span>
+
+                        <h3>
+                            Egne estimater
+                        </h3>
+
+                        <p>
+                            Prognoser, scenarioer, DCF, Reverse DCF,
+                            peer-verdsettelse og beregninger av
+                            kapitalavkastning er egne estimater.
+                            Forutsetningene oppgis i analysen og den
+                            tilhørende Excel-modellen.
                         </p>
                     </article>
                 </div>
@@ -989,32 +1156,88 @@
                     </div>
 
                     <p class="note">
-                        Første analyse publiseres snart.
+                        Nye analyser legges til fortløpende.
                     </p>
                 </div>
 
                 <div class="analysis-list">
                     <article class="analysis-item">
                         <div class="analysis-status">
-                            Under arbeid
+                            Publisert
                         </div>
 
                         <div>
                             <h3>
-                                Første selskapsanalyse
+                                TOMRA Systems ASA
                             </h3>
 
+                            <p class="analysis-subtitle">
+                                Veksten er sterk, men er den verdiskapende?
+                            </p>
+
                             <p>
-                                En full analyse med investeringscase,
-                                sentrale drivere, scenarioer, verdsettelse,
-                                katalysatorer og forhold som kan motbevise
-                                tesen.
+                                En analyse av lønnsomheten i nye
+                                pantesystemer, kvaliteten på kontantstrømmen
+                                og forventningene som ligger innebygd i
+                                aksjekursen.
+                            </p>
+
+                            <div class="analysis-actions">
+                                <!--
+                                    PDF-FIL:
+                                    Legg PDF-en i mappen "filer" og gi den
+                                    navnet "tomra-analyse.pdf".
+                                -->
+
+                                <a
+                                    class="analysis-button"
+                                    href="filer/tomra-analyse.pdf"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Åpne hovedanalysen
+                                    <span aria-hidden="true">↗</span>
+                                </a>
+
+                                <a
+                                    class="analysis-button secondary"
+                                    href="filer/tomra-analyse.pdf"
+                                    download
+                                >
+                                    Last ned PDF
+                                </a>
+                            </div>
+
+                            <div class="model-resource">
+                                <span>
+                                    Datagrunnlag:
+                                </span>
+
+                                <!--
+                                    EXCEL-FIL:
+                                    Legg Excel-filen i mappen "filer" og gi
+                                    den navnet "tomra-datagrunnlag.xlsx".
+                                -->
+
+                                <a
+                                    href="filer/tomra-datagrunnlag.xlsx"
+                                    download
+                                >
+                                    Last ned Excel-modellen (.xlsx)
+                                </a>
+                            </div>
+
+                            <p class="model-note">
+                                Excel-filen inneholder historiske tall,
+                                prognoser, scenarioer og
+                                verdsettelsesberegninger.
                             </p>
                         </div>
 
                         <div class="analysis-side">
-                            Oslo Børs<br>
-                            Publiseres snart
+                            Oslo Børs · TOM<br>
+                            Publisert august 2026<br>
+                            PDF og Excel-modell
                         </div>
                     </article>
 
@@ -1029,9 +1252,8 @@
                             </h3>
 
                             <p>
-                                Når flere analyser er publisert,
-                                organiseres de etter selskap, sektor og
-                                publiseringsdato.
+                                Nye analyser organiseres etter selskap,
+                                sektor og publiseringsdato.
                             </p>
                         </div>
 
